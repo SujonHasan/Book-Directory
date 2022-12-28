@@ -5,12 +5,14 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 // built 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
 const bookRouter = require('./routes/books');
 
+app.use(methodOverride('_method'));
 // set ejs & ejs layouts
 app.set('view engine', 'ejs');
 // app.set('views', __dirname + 'views');
